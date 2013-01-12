@@ -21,7 +21,7 @@ require 'rcov/rcovtask'
 
 desc "Package Gem"
 task :package do
-  system('gem build xmpp4r-simple.gemspec')
+  system('gem build xmpp4r-simple-19.gemspec')
 end
 
 desc "Default Task"

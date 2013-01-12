@@ -2,11 +2,11 @@ Gem::Specification.new do |s|
   s.add_dependency('xmpp4r', '>= 0.3.2')
   s.add_development_dependency('rake')
   s.add_development_dependency('rcov')
-  s.name = "xmpp4r-simple" 
-  s.version = "0.8.8" 
+  s.name = "xmpp4r-simple-19"
+  s.version = "1.0.0"
   s.author = "Blaine Cook" 
   s.email = "romeda@gmail.com" 
-  s.homepage = "http://xmpp4r-simple.rubyforge.org/" 
+  s.homepage = "https://github.com/treeder/xmpp4r-simple"
   s.platform = Gem::Platform::RUBY 
   s.summary = "A simplified Jabber client library." 
   s.description = <<-EOF
@@ -19,5 +19,4 @@ Gem::Specification.new do |s|
   s.test_files = Dir.glob("test/test_*.rb")
   s.has_rdoc = true 
   s.extra_rdoc_files = ["README", "COPYING"] 
-  s.rubyforge_project = "xmpp4r-simple"
-end 
+end
