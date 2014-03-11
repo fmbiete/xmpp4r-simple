@@ -2,7 +2,7 @@
 
 Jabber::Simple - An extremely easy-to-use Jabber client library.
 
-## THIS IS RUBY 1.9 COMPATIBLE VERSION of xmpp4r-simple
+#### THIS IS RUBY 1.9 COMPATIBLE VERSION of xmpp4r-simple
 
 This is simply updated to work with ruby 1.9.
 
