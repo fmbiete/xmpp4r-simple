@@ -1,49 +1,50 @@
-= Name
+# Name
 
 Jabber::Simple - An extremely easy-to-use Jabber client library.
 
-= THIS IS RUBY 1.9 COMPATIBLE VERSION of xmpp4r-simple
+#### THIS IS RUBY 1.9 COMPATIBLE VERSION of xmpp4r-simple
 
 This is simply updated to work with ruby 1.9.
 
-= Synopsis
+# Synopsis
+    
+    # Send a message to a friend, asking for authorization if necessary:
+    im = Jabber::Simple.new("user@example.com", "password")
+    im.deliver("friend@example.com", "Hey there friend!")
 
-  # Send a message to a friend, asking for authorization if necessary:
-  im = Jabber::Simple.new("user@example.com", "password")
-  im.deliver("friend@example.com", "Hey there friend!")
+    # Get received messages and print them out to the console:
+    im.received_messages { |msg| puts msg.body if msg.type == :chat }
 
-  # Get received messages and print them out to the console:
-  im.received_messages { |msg| puts msg.body if msg.type == :chat }
+    # Send an authorization request to a user:
+    im.add("friend@example.com")
 
-  # Send an authorization request to a user:
-  im.add("friend@example.com")
+    # Get presence updates from your friends, and print them out to the console:
+    # (admittedly, this one needs some work)
+    im.presence_updates { |update|
+      from     = update[0].jid.strip.to_s
+      status   = update[2].status
+      presence = update[2].show
+      puts "#{from} went #{presence}: #{status}"
+    end
 
-  # Get presence updates from your friends, and print them out to the console:
-  # (admittedly, this one needs some work)
-  im.presence_updates { |update|
-    from     = update[0].jid.strip.to_s
-    status   = update[2].status
-    presence = update[2].show
-    puts "#{from} went #{presence}: #{status}"
-  end
+    # Remove a user from your contact list:
+    im.remove("unfriendly@example.com")
 
-  # Remove a user from your contact list:
-  im.remove("unfriendly@example.com")
+    # See the Jabber::Simple documentation for more information.
 
-  # See the Jabber::Simple documentation for more information.
 
-= Description
+## Description
 
 Jabber::Simple is intended to make Jabber client programming dead simple. XMPP,
 the Jabber protocol, is extremely powerful but also carries a steep learning
 curve. This library exposes only the most common tasks, and does so in a way
 that is familiar to users of traditional instant messenger clients.
 
-= Known Issues
+## Known Issues
 
 * None. If you'd like additional functionality, please contact the developer!
 
-= Copyright
+## Copyright
 
 Jabber::Simple - An extremely easy-to-use Jabber client library.
 Copyright 2006-2008 Blaine Cook <romeda@gmail.com>.
